@@ -1,0 +1,22 @@
+{% extends 'archiveapp/base.html' %}
+{% load static %}
+
+{% block title %}Категории{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/category.css' %}">{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <h1 class="title_category">Категории</h1>
+    <ul class="category_list">
+        {% for category in categories %}
+            <li>
+                <i class="fa-solid fa-book"></i>
+                <a href="{% url 'essays_by_category' category.id %}">{{ category.name }}</a>
+            </li>
+        {% empty %}
+            <li>Категорий пока нет</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

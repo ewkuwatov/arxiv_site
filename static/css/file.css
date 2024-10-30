@@ -1,0 +1,32 @@
+.title_category {
+    padding: 20px 0;
+}
+
+.file_list {
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.file_list li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.file_list li p a{
+    margin-left: 40px;
+}
+
+.back_btn {
+    padding: 10px 15px;
+    border: 1px solid;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(194, 107, 107);
+}
+
+.back_btn:hover {
+    background-color: #fff;
+    color: rgb(194, 107, 107);
+}

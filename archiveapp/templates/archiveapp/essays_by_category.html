@@ -1,0 +1,23 @@
+{% extends 'archiveapp/base.html' %}
+{% load static %}
+
+{% block title %}Эссе категории {{ category.name }}{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/file.css' %}">{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="title_category">Категория "{{ category.name }}"</h1>
+    <ul class="file_list">
+        {% for essay in essays %}
+            <li>
+                <p>{{ essay.title }}</p>
+                <p>{{ essay.price }} сум<a href="{{ essay.file.url }}"><i class="fa-solid fa-download"></i></a></p>
+            </li>
+        {% empty %}
+            <li>В этой категории пока нет эссе</li>
+        {% endfor %}
+    </ul>
+    <a class="back_btn" href="{% url 'category_list' %}">Назад</a>
+
+</div>
+{% endblock %}
